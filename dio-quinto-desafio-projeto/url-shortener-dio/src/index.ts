@@ -1,9 +1,13 @@
 
 import { URLController } from './controller/URLcontroller';
 import express, { json, NextFunction, Request, Response } from 'express';
+import { MongoConnection } from './database/MongoConnection';
 
 const api = express()
 api.use(express.json())
+
+const database = new MongoConnection()
+database.connect()
 
 const urlController = new URLController()
 
