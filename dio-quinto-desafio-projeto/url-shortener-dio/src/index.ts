@@ -9,6 +9,7 @@ const urlController = new URLController()
 
 api.post('/shorten',urlController.shorten)
 api.get('/test',(req: Request,res: Response)=>{res.json({success:true})})
+api.get("/:hash",urlController.redirect)
 
 api.listen(5000,()=>console.log('Express is listening'))
 

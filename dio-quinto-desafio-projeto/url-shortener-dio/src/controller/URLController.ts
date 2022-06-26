@@ -20,7 +20,12 @@ export class URLController {
         // Get URL hash
         const {hash} = req.params
         //Find original URL by hash
-        
+        const url = {
+            originURL:"https://cloud.mongodb.com/v2/62b8b382162de96559a683b5#clusters",
+            hash: "D9VliETP0",
+            shortURL: "http://localhost:5000/D9VliETP0"
+        }
         // Redirect to original URL from what was found in DB
+        response.redirect(url.originURL)
     }
 }
